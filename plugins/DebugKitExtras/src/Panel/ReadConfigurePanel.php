@@ -30,7 +30,16 @@ class ReadConfigurePanel extends DebugPanel
      */
     public function shutdown(EventInterface $event): void
     {
-        $vars = Configure::read();
+        $filterVars = Configure::read('DebugKitExtras.filter', []);
+
+        if (!empty($filterVars)) {
+            foreach ($filterVars as $var) {
+                $vars[$var] = Configure::read($var, null);
+            }
+        } else {
+            $vars = Configure::read();
+        }
+
         $varsMaxDepth = (int)Configure::read('DebugKit.variablesPanelMaxDepth', 5);
 
         $variables = [];
@@ -39,7 +48,7 @@ class ReadConfigurePanel extends DebugPanel
             $variables[$k] = Debugger::exportVarAsNodes($v, $varsMaxDepth);
         }
 
-        $this->_data = compact('variables', 'varsMaxDepth');
+        $this->_data = compact('variables', 'varsMaxDepth', 'filterVars');
     }
 
     /**

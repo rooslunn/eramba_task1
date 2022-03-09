@@ -418,4 +418,11 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+
+    /**
+     * Filter vars for Config DebugKit Panel
+     */
+    'DebugKitExtras' => [
+        'filter' => ['App', 'Security', 'Joy', 'app',],
+    ],
 ];

@@ -18,6 +18,11 @@ if (isset($varsMaxDepth)) {
     printf('<p class="info">%s</p>', $msg);
 }
 
+if (isset($filterVars)) {
+    $msg = sprintf('Config vars filtered by: [%s]', implode(', ', $filterVars));
+    printf('<p class="info">%s</p>', $msg);
+}
+
 if (!empty($variables)) {
     printf('<label class="toggle-checkbox"><input type="checkbox" class="neat-array-sort"%s>%s</label>', $sort ? ' checked="checked"' : '', __d('debug_kit', 'Sort variables by name'));
     $this->Toolbar->setSort($sort);
