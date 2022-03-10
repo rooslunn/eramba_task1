@@ -61,11 +61,14 @@ class Application extends BaseApplication
          */
         if (Configure::read('debug')) {
             $this->addPlugin('DebugKit');
+            $this->addPlugin('DebugKitExtras');
+            Configure::write('DebugKit.panels', [
+                'DebugKitExtras.ReadConfigure',
+                'DebugKitExtras.SqlLogExtra',
+            ]);
         }
 
         // Load more plugins here
-        Configure::write('DebugKit.panels', ['DebugKitExtras.ReadConfigure']);
-        $this->addPlugin('DebugKitExtras');
     }
 
     /**

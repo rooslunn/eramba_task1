@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3366cb597281e01236f24323756632d6",
+    "content-hash": "449184d6cdaf3029771c962a516b13f7",
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -4316,6 +4316,56 @@
             "time": "2022-02-11T10:27:51+00:00"
         },
         {
+            "name": "rooslunn/debug-kit-extras",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rooslunn/debug-kit-extras.git",
+                "reference": "4768e500bbe633995d1338858ebca7ee1332563f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rooslunn/debug-kit-extras/zipball/4768e500bbe633995d1338858ebca7ee1332563f",
+                "reference": "4768e500bbe633995d1338858ebca7ee1332563f",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^4.3",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5 || ^9.3"
+            },
+            "default-branch": true,
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DebugKitExtras\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "DebugKitExtras\\Test\\": "tests/",
+                    "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eramba Ltd",
+                    "homepage": "https://www.eramba.org/"
+                }
+            ],
+            "description": "Extended DebugKit plugin for CakePHP",
+            "support": {
+                "source": "https://github.com/cakephp/bake",
+                "issues": "https://github.com/rooslunn/debug-kit-extras/issues"
+            },
+            "time": "2022-03-10T12:54:42+00:00"
+        },
+        {
             "name": "sebastian/cli-parser",
             "version": "1.0.1",
             "source": {
@@ -5889,7 +5939,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "rooslunn/debug-kit-extras": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

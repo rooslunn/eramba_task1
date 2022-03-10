@@ -21,6 +21,7 @@ use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Static content controller
@@ -62,6 +63,12 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 
         try {
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute('SELECT * FROM users')->fetchAll('assoc');
+            $results = $connection->execute('SELECT * FROM posts')->fetchAll('assoc');
+            $results = $connection->execute('SELECT * FROM users')->fetchAll('assoc');
+            $results = $connection->execute('SELECT * FROM posts')->fetchAll('assoc');
+
             return $this->render(implode('/', $path));
         } catch (MissingTemplateException $exception) {
             if (Configure::read('debug')) {

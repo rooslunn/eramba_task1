@@ -422,7 +422,14 @@ return [
     /**
      * Filter vars for Config DebugKit Panel
      */
-    'DebugKitExtras' => [
-        'filter' => ['App', 'Security', 'Joy', 'app',],
+    'ReadConfigure' => [
+        'filter' => [],
+    ],
+
+    /**
+     * SqlLogExtra settings
+     */
+    'SqlLogExtra' => [
+        'highlightOpacity' => '33',
     ],
 ];
